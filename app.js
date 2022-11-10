@@ -21,6 +21,7 @@ const reqIdentifier = (req,res,next) => {
 
 // Middlewear
 app.use(reqIdentifier)
+app.set('view engine', 'ejs')
 
 
 app.get('/', (req,res,next)=>{
