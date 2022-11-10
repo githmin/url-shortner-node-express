@@ -19,10 +19,16 @@ const reqIdentifier = (req,res,next) => {
     next()
 }
 
+const newUrl = require('./routes/newUrl')
+
+
 // Middlewear
 app.use(reqIdentifier)
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 app.set('view engine', 'ejs')
 
+app.use('/new', newUrl)
 
 app.get('/', (req,res,next)=>{
     res.send("Connection success")
