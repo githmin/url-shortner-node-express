@@ -1,4 +1,6 @@
 require('dotenv').config()
+const path = require('path');
+
 
 const express = require('express')
 const { default: mongoose } = require('mongoose')
@@ -19,20 +21,19 @@ const reqIdentifier = (req,res,next) => {
     next()
 }
 
-const newUrl = require('./routes/newUrl')
+const newUrlRoute = require('./routes/newUrlRoute')
+const indexRoute = require('./routes/indexRoute')
 
 
 // Middlewear
 app.use(reqIdentifier)
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
-app.use('/new', newUrl)
-
-app.get('/', (req,res,next)=>{
-    res.send("Connection success")
-})
+app.use('/new', newUrlRoute)
+app.use('/', indexRoute )
 
 
 
