@@ -1,7 +1,6 @@
 # URL-Shortner
 
-This is a simple url shortner made with node/express, mongodb
-Click [Here](https://long-tan-coati-tam.cyclic.app) for a preview
+This is a simple url shortner made with node/express, mongodb | Click [Here](https://long-tan-coati-tam.cyclic.app) for a preview
 ## Features
 
 - Shorten Urls
