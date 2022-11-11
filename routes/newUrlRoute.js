@@ -10,7 +10,7 @@ router.post('/' , async (req,res,next)=>{
             short : randomstring.generate(8)
         })
     await newUrl.save()
-    res.send("Done")
+    res.redirect('/')
 })  
 
 

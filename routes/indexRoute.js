@@ -6,7 +6,6 @@ const urlModel = require('../models/URL')
 router.get('/' , async (req,res,next)=>{
     const urlList = await urlModel.find()
     res.render('index', { urlList : urlList})
-    console.log(urlList)
 })  
 
 

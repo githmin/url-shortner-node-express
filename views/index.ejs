@@ -11,9 +11,9 @@
   <h1>Hello</h1>
 
 
-  <form action="/action_page.php">
-    <label for="newUrl">URL</label><br>
-    <input type="text" id="newUrl" name="newUrl"><br>
+  <form action="/new" method="post">
+    <label for="full">URL</label><br>
+    <input type="text" id="full" name="full"><br>
     <input type="submit" value="Submit">
   </form>
 
@@ -21,7 +21,7 @@
     <div class="list-group w-auto">
         <% urlList.forEach(element => { %>
             <div class="list-group w-80">
-                <a href="/<%= element.short %>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <a href="/rdr/<%= element.short %>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                     <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
                     <div class="d-flex gap-2 w-100 justify-content-between">
                       <div>

@@ -23,7 +23,7 @@ const reqIdentifier = (req,res,next) => {
 
 const newUrlRoute = require('./routes/newUrlRoute')
 const indexRoute = require('./routes/indexRoute')
-
+const redirecterRouter = require('./routes/redirecterRoute')
 
 // Middlewear
 app.use(reqIdentifier)
@@ -34,7 +34,7 @@ app.set('view engine', 'ejs')
 
 app.use('/new', newUrlRoute)
 app.use('/', indexRoute )
-
+app.use('/rdr', redirecterRouter)
 
 
 app.listen(process.env.port, ()=> {
