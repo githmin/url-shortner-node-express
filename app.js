@@ -17,7 +17,6 @@ db.on('open', ()=>{
 })
 
 const reqIdentifier = (req,res,next) => {
-    console.log("Got/Sent a req/res")
     next()
 }
 
@@ -34,7 +33,6 @@ app.set('view engine', 'ejs')
 
 app.use('/new', newUrlRoute)
 app.use('/', indexRoute )
-app.use('/rdr', redirecterRouter)
 
 
 app.listen(process.env.port, ()=> {
